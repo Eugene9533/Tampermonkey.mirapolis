@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MirapolisExtension
 // @namespace    http://tampermonkey.net/
-// @version      0.32
+// @version      0.33
 // @description  Adding new expanding functionality
 // @author       Eugene
 // @match        https://mv1.virtualroom.ru/*
@@ -46,9 +46,9 @@ hiddenButtonWeb.classList.add('hiddenButtonWeb');
   let MenuButtonStyle = document.createElement('style');
   document.body.appendChild(MenuButtonStyle);
   MenuButtonStyle.innerHTML = ".extension {position: absolute; top: 0; left: 0; height: 48px; display: flex; z-index: 200;} \
-                               .menu {width: 123px; background-color: rgb(0, 170, 222); color: white; padding: 12px 40px 12px 40px; text-align: justify; font-size: 16px; border: none; cursor: pointer;} \
+                               .menu {width: 128px; background-color: rgb(0, 170, 222); color: white; padding: 12px 40px 12px 40px; text-align: justify; font-size: 16px; border: none; cursor: pointer;} \
                                .menu:hover, .menu:focus {background-color: rgb(0, 153, 215)} \
-                               .area {width: 123px; display: none; position: absolute; background-color: rgb(255, 255, 255); min-width: 111px; overflow: auto; border-radius: 0px 0px 15px 0px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); z-index: 12;} \
+                               .area {width: 128px; display: none; position: absolute; background-color: rgb(255, 255, 255); min-width: 111px; overflow: auto; border-radius: 0px 0px 15px 0px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); z-index: 12;} \
                                .area p {font-size: 16px; color: black; padding: 10px 10px; display: block; margin: 0; cursor: pointer;} \
                                .main p:hover {background-color: rgb(221 221 221);} \
                                .show {display: block;}";
@@ -56,16 +56,16 @@ hiddenButtonWeb.classList.add('hiddenButtonWeb');
   let extension = document.createElement('div');
     let main = document.createElement('div');
       let menu = document.createElement('div');
-      let menuText = document.createTextNode("Menu");
+      let menuText = document.createTextNode("Меню");
         let area = document.createElement('div');
          let fullScreen = document.createElement('p');
-         let fullScreenText = document.createTextNode("Full Screen");
+         let fullScreenText = document.createTextNode("Полный экран");
          let onlyWebCam = document.createElement('p');
-         let onlyWebCamText = document.createTextNode("Only WebCam");
+         let onlyWebCamText = document.createTextNode("Только камера");
          let lecturerMode = document.createElement('p');
-         let lecturerModeText = document.createTextNode("Lecturer Mode");
+         let lecturerModeText = document.createTextNode("Для лектора");
          let exit = document.createElement('p');
-         let exitText = document.createTextNode("Exit");
+         let exitText = document.createTextNode("Отменить");
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
   extension.classList.add('extension');
     main.classList.add('main');
