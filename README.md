@@ -3,7 +3,7 @@
 ---
 
 ### Вкладка Меню:
-![Меню](https://github.com/Eugene9533/tampermonkey.mirapolis/main/pic/Меню.png)
+![Меню](https://github.com/Eugene9533/tampermonkey.mirapolis/blob/main/pic/Меню.png)
 - Full Screen: 
   - Открытие окна браузера на весь экран в полноэкранном режиме; 
   - вывод демонстрации экрана на всю область браузера;
