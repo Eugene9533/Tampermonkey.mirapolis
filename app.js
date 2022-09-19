@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MirapolisExtension
 // @namespace    http://tampermonkey.net/
-// @version      0.33
+// @version      0.34
 // @description  Adding new expanding functionality
 // @author       Eugene
 // @match        https://mv1.virtualroom.ru/*
@@ -328,7 +328,7 @@ hiddenButtonWeb.classList.add('hiddenButtonWeb');
     secret = 0;
   }
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-  let secret = 0;
+/*  let secret = 0;
   menu.onclick = () => {
     secret += 1;
     if(secret == 20) {
@@ -339,7 +339,7 @@ hiddenButtonWeb.classList.add('hiddenButtonWeb');
                                     .main p:hover {background-color: #00000050;}"
     }
     document.getElementById("dropdown").classList.toggle("show");
-  };
+  };*/
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
   window.onclick = function (event) {
     if (!event.target.matches('.menu')) {
