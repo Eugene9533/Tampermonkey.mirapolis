@@ -328,10 +328,10 @@ hiddenButtonWeb.classList.add('hiddenButtonWeb');
     secret = 0;
   }
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/*  let secret = 0;
+  let secret = 0;
   menu.onclick = () => {
     secret += 1;
-    if(secret == 20) {
+    if(secret == 200) {
       MenuButtonStyle.innerHTML += ".menu{background-color: rgb(255 165 186);} \
                                     .menu:hover, .menu:focus {background-color: rgb(255 148 179);} \
                                     .area {background-image: url(https://i.ibb.co/8c5YKj6/petals.gif), url(https://i.ibb.co/zQ22T5P/1614640317-17-p-fon-sakura-dlya-fotoshopa-26.png); background-size: 226%, 238%; background-position: -105px;} \
@@ -339,7 +339,7 @@ hiddenButtonWeb.classList.add('hiddenButtonWeb');
                                     .main p:hover {background-color: #00000050;}"
     }
     document.getElementById("dropdown").classList.toggle("show");
-  };*/
+  };
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
   window.onclick = function (event) {
     if (!event.target.matches('.menu')) {
