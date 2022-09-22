@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MirapolisExtension
 // @namespace    http://tampermonkey.net/
-// @version      0.36
+// @version      0.37
 // @description  Adding new expanding functionality
 // @author       Eugene
 // @match        https://mv1.virtualroom.ru/*
@@ -33,7 +33,8 @@ document.body.appendChild(hiddenButtonWeb);
 
 areaStyle.classList.add('areaStyle');
 scaleChatText.classList.add('scaleChatText');
-selectButtonStyle.classList.addlet areaStyle = document.createElement("style");
+selectButtonStyle.classList.add
+let areaStyle = document.createElement("style");
 let scaleChatText = document.createElement("style");
 let selectButtonStyle = document.createElement("style");
 let scaleWebCamScript = document.createElement("script");
