@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MirapolisExtension
 // @namespace    http://tampermonkey.net/
-// @version      0.37
+// @version      0.38
 // @description  Adding new expanding functionality
 // @author       Eugene
 // @match        https://mv1.virtualroom.ru/*
@@ -9,31 +9,6 @@
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // ==/UserScript==
-let areaStyle = document.createElement("style");
-let scaleChatText = document.createElement("style");
-let selectButtonStyle = document.createElement("style");
-let scaleWebCamScript = document.createElement("script");
-let sliderScaleChatTextStyle = document.createElement("style");
-let customCheckBoxMessageStyle = document.createElement("style");
-let customButtonRemoveAllMessageStyle = document.createElement("style");
-let customCheckBoxWebStyle = document.createElement("style");
-let hiddenWeb = document.createElement("style");
-let hiddenButtonWeb = document.createElement("style");
-
-document.body.appendChild(areaStyle);
-document.body.appendChild(scaleChatText);
-document.body.appendChild(selectButtonStyle);
-document.body.appendChild(scaleWebCamScript);
-document.body.appendChild(sliderScaleChatTextStyle);
-document.body.appendChild(customCheckBoxMessageStyle);
-document.body.appendChild(customButtonRemoveAllMessageStyle);
-document.body.appendChild(customCheckBoxWebStyle);
-document.body.appendChild(hiddenWeb);
-document.body.appendChild(hiddenButtonWeb);
-
-areaStyle.classList.add('areaStyle');
-scaleChatText.classList.add('scaleChatText');
-selectButtonStyle.classList.add
 let areaStyle = document.createElement("style");
 let scaleChatText = document.createElement("style");
 let selectButtonStyle = document.createElement("style");
