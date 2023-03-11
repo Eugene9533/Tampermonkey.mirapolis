@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MirapolisExtension
 // @namespace    http://tampermonkey.net/
-// @version      0.38
+// @version      0.39
 // @description  Adding new expanding functionality
 // @author       Eugene
 // @match        https://mv1.virtualroom.ru/*
@@ -90,7 +90,7 @@ hiddenButtonWeb.classList.add('hiddenButtonWeb');
   document.querySelector('.extension').insertAdjacentHTML('beforeEnd', '<input type="button" class="customButtonRemoveAllMessage" title="Удалить все сообщения">');
   customButtonRemoveAllMessageStyle.innerHTML = '.customButtonRemoveAllMessage {position: relative; top: 12px; display: flex; flex-direction: row; -webkit-box-pack: center; justify-content: center; -webkit-box-align: center; align-items: center; flex-shrink: 0; margin-left: 16px; background: #edf1f1; width: 24px; height: 24px; border-radius: 50%; border: none; color: white; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; cursor: pointer; background-image: url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'-4 -4 24 24\'%3e%3cpath fill=\'rgb(142, 156, 160)\' d=\'M13.817 4.531c.331 0 .56-.334.436-.64A2.973 2.973 0 0011.5 2.03h-.575C10.71.898 9.716 0 8.5 0h-1C6.285 0 5.29.897 5.075 2.031H4.5c-1.245 0-2.313.77-2.753 1.86a.468.468 0 00.436.64h11.634zM7.5.938h1c.684 0 1.265.46 1.46 1.093H6.04A1.538 1.538 0 017.5.937zM3.47 14.694A1.411 1.411 0 004.873 16h6.254c.734 0 1.35-.574 1.403-1.306l.657-9.225H2.813l.657 9.225zm5.812-6.717a.469.469 0 01.936.046l-.25 5a.469.469 0 01-.936-.046l.25-5zm-3.055-.445a.469.469 0 01.491.445l.25 5a.469.469 0 11-.936.046l-.25-5a.469.469 0 01.445-.491z\'/%3e%3c/svg%3e");} \
                                                  .customButtonRemoveAllMessage:hover {background-image: url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'-4 -4 24 24\'%3e%3cpath fill=\'rgb(66 80 82);\' d=\'M13.817 4.531c.331 0 .56-.334.436-.64A2.973 2.973 0 0011.5 2.03h-.575C10.71.898 9.716 0 8.5 0h-1C6.285 0 5.29.897 5.075 2.031H4.5c-1.245 0-2.313.77-2.753 1.86a.468.468 0 00.436.64h11.634zM7.5.938h1c.684 0 1.265.46 1.46 1.093H6.04A1.538 1.538 0 017.5.937zM3.47 14.694A1.411 1.411 0 004.873 16h6.254c.734 0 1.35-.574 1.403-1.306l.657-9.225H2.813l.657 9.225zm5.812-6.717a.469.469 0 01.936.046l-.25 5a.469.469 0 01-.936-.046l.25-5zm-3.055-.445a.469.469 0 01.491.445l.25 5a.469.469 0 11-.936.046l-.25-5a.469.469 0 01.445-.491z\'/%3e%3c/svg%3e");}'
-  document.querySelector('.extension').insertAdjacentHTML('beforeEnd', '<div class="customCheckBoxMessage"><input class="custom-checkbox" type="checkbox" id="cch" name="cch" checked><label for="cch" title="Уведомления о сообщениях"></label></div>');
+  document.querySelector('.extension').insertAdjacentHTML('beforeEnd', '<div class="customCheckBoxMessage"><input class="custom-checkbox" type="checkbox" id="cch" name="cch"><label for="cch" title="Уведомления о сообщениях"></label></div>');
   customCheckBoxMessageStyle.innerHTML ='.customCheckBoxMessage {position: relative; top: 12px; display: flex; flex-direction: row; -webkit-box-pack: center; justify-content: center; -webkit-box-align: center; align-items: center; flex-shrink: 0; margin-left: 16px; background: #edf1f1; width: 24px; height: 24px; border-radius: 50%; cursor: pointer;} \
                                          .custom-checkbox {position: absolute; z-index: -1; opacity: 0; cursor: pointer;} \
                                          .custom-checkbox+label {display: inline-flex; align-items: center; user-select: none; cursor: pointer;} \
@@ -129,7 +129,7 @@ hiddenButtonWeb.classList.add('hiddenButtonWeb');
   }
   setInterval(() => {
     let newList = document.querySelectorAll('.remote');
-    let preName = newList[newList.length-3];
+    let preName = newList[1];
     if (preName === undefined) {
       } else { preName = preName.innerText };
     let findname = /\n(.*?)\n/g.exec(preName);
@@ -137,7 +137,10 @@ hiddenButtonWeb.classList.add('hiddenButtonWeb');
       } else { name = findname[1] };
     if(focusBrowser && check) {
       if(checkList.length < newList.length) {
-        let message = newList[newList.length-1].innerText;
+      let message;
+        if (newList[0].outerText.includes('\n')) {
+            message = newList[3].innerText;
+            } else { message = newList[2].innerText;}
         let notify = () => {
           new Notification(name, {
             body: message,
